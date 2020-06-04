@@ -1,7 +1,7 @@
 resource "kubernetes_deployment" "deloitte_drifters_backend" {
   metadata {
     name      = "deloitte-drifters-backend"
-    namespace = kubernetes_namespace.qa.metadata[0].name
+    namespace = kubernetes_namespace.dev.metadata[0].name
 
     labels = {
       app = "deloitte-drifters-backend"

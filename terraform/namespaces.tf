@@ -1,6 +1,6 @@
 resource "kubernetes_namespace" "development" {
   metadata {
-    name = "development"
+    name = "dev"
   }
 }
 
