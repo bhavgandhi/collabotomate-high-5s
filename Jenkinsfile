@@ -10,6 +10,7 @@ pipeline {
             sh 'git version'
             sh 'node -v'
             sh 'npm -v'
+            sh 'gcloud version'
             
          }
       }
@@ -45,8 +46,6 @@ pipeline {
             sh 'kubectl get deployments -n dev'
             sh 'kubectl get pods -n dev'
             sh 'kubectl get services -n dev'
-            
-            
             
          }
       }
