@@ -1,7 +1,7 @@
 resource "kubernetes_service" "deloitte_drifters_frontend_service" {
   metadata {
     name      = "deloitte-drifters-frontend-service"
-    namespace = kubernetes_namespace.dev.metadata[0].name
+    namespace = kubernetes_namespace.master.metadata[0].name
   }
 
   spec {
