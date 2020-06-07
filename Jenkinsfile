@@ -42,12 +42,12 @@ pipeline {
             sh "kubectl version"
             sh "kubectl get namespaces"
             
-            echo "kubectl set image deployment/deloitte-drifters-frontend deloitte-drifters-frontend=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} --record --namespace=dev"
-            sh "kubectl set image deployment/deloitte-drifters-frontend deloitte-drifters-frontend=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} --record --namespace=dev"
+            echo "kubectl set image deployment/deloitte-drifters-frontend deloitte-drifters-frontend=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} --record --namespace=master"
+            sh "kubectl set image deployment/deloitte-drifters-frontend deloitte-drifters-frontend=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} --record --namespace=master"
             
-            sh "kubectl get deployments -n dev"
-            sh "kubectl get pods -n dev"
-            sh "kubectl get services -n dev"
+            sh "kubectl get deployments -n master"
+            sh "kubectl get pods -n master"
+            sh "kubectl get services -n master"
             
          }
       }
