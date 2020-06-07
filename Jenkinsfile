@@ -18,7 +18,7 @@ pipeline {
       }
       stage("Cloning GitHub Repo Into Jenkins...") {
          steps {
-             git branch: "dev",
+             git branch: "master",
                 url:"https://github.com/bhavgandhi/collabotomate-high-5s.git"
              sh "ls"   
          }
