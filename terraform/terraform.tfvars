@@ -1,5 +1,5 @@
 # GCP Settings
-project_id   = "playground-s-11-7e92ae" # Enter your project ID here.
+project_id   = "playground-s-11-2a6079" # Enter your project ID here.
 gcp_region_1 = "us-central1"
 gcp_zone_1   = "us-central1-a"
 

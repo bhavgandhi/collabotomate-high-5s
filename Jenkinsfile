@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-        GOOGLE_PROJECT_ID = "playground-s-11-7e92ae"
+        GOOGLE_PROJECT_ID = "playground-s-11-2a6079"
     } 
    stages {
       stage("Version Verification Stage") {
