@@ -4,7 +4,7 @@ pipeline {
         GOOGLE_PROJECT_ID = "playground-s-11-6b335b"
     } 
    stages {
-      stage("Version Verification Stage") {
+      stage("Stage 1 - Version Verification Stage") {
          steps {
             echo "Checking Versions..."
             sh "docker --version"
@@ -16,15 +16,23 @@ pipeline {
             
          }
       }
-      stage("Cloning GitHub Repo Into Jenkins...") {
+      stage("Stage 2 - Cloning GitHub Repo Into Jenkins...") {
          steps {
              git branch: "master",
                 url:"https://github.com/bhavgandhi/collabotomate-high-5s.git"
              sh "ls"   
          }
       }
-      
-      stage("Package Application using Docker and storing the image in registry..") {
+      stage("Stage 2.1 - NodeJS TEST...") {
+         steps {
+             sh "node --trace-deprecation"
+             sh "npm install"
+             sh "npm fund"
+             // sh "npm test"
+             sh "ls"   
+         }
+      }
+      stage("Stage 3 - Package Application using Docker and storing the image in registry..") {
          steps {
             echo "Docker Images List"
             sh "docker images"
@@ -32,7 +40,7 @@ pipeline {
             sh "gcloud builds submit --tag=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} . "
          }
       }
-      stage("Deployment - Kubernetes Cluster Resource Creation/Update") {
+      stage("Stage 4 - Deployment - Kubernetes Cluster Resource Creation/Update") {
          steps {
             echo "Installing Kubernetes Cluster"
             sh "pwd"
