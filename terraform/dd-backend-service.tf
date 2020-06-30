@@ -9,7 +9,7 @@ resource "kubernetes_service" "deloitte_drifters_backend_service" {
     port {
       protocol    = "TCP"
       port        = 80
-      target_port = "8082"
+      target_port = 8082
     }
 
     selector = {
