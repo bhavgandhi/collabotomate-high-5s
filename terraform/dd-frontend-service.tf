@@ -8,7 +8,7 @@ resource "kubernetes_service" "deloitte_drifters_frontend_service" {
     port {
       protocol    = "TCP"
       port        = 80
-      target_port = "8080"
+      target_port = "80"
       node_port   = 30345
     }
 

@@ -125,7 +125,7 @@ app.use((err, req, res, next) => {
 
 // specify the port and start listening
 // const PORT = 8080 - WAS GIVING EADDR already in use
-const PORT = 8082;
+const PORT = 80;
 const server = app.listen(PORT, () => {
     const host = server.address().address;
     const port = server.address().port;
