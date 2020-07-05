@@ -28,14 +28,14 @@ pipeline {
              sh "npm install"
              // sh "npm test"
              //sh "npm run sonar"
-             
+
              sh "ls"   
          }
       }
       stage("Stage 3 - Package Application using Docker and storing the image in registry..") {
          steps {
             echo "Docker Images List"
-            sh "docker images"
+            sh "sudo docker images"
             echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             sh "gcloud builds submit --tag=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} . "
          }
