@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "nyc mocha --exit",
+    "start": "SERVER=http://localhost:8082 node server.js",
+    "test": "SERVER=http://localhost:8082 nyc mocha --exit",
     "sonar":"sonar-scanner"
   },
   "keywords": [],
