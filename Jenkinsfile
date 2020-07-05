@@ -26,7 +26,7 @@ pipeline {
          steps {
              sh "node --trace-deprecation"
              sh "npm install"
-             // sh "npm test"
+             sh "npm test"
              //sh "npm run sonar"
 
              sh "ls"   
