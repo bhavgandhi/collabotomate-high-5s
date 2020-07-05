@@ -28,6 +28,7 @@ pipeline {
              sh "npm install"
              sh "npm fund"
              // sh "npm test"
+             sh "npm run sonar"
              sh "ls"   
          }
       }
