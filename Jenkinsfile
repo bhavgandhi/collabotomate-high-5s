@@ -22,7 +22,7 @@ pipeline {
              sh "ls"   
          }
       }
-      stage("Stage 2.1 - NodeJS TEST...") {
+      stage("Stage 2.1 - NodeJS TEST + NPM Test + Sonar Code Analysis...") {
          steps {
              sh "node --trace-deprecation"
              sh "npm install"
@@ -37,7 +37,7 @@ pipeline {
             sh "gcloud builds submit --tag=gcr.io/${GOOGLE_PROJECT_ID}/jenkins-pipe-external:v1.${env.BUILD_ID} . "
          }
       }
-      stage("Stage 4 - Deployment - Kubernetes Cluster Resource Creation/Update") {
+      stage("Stage 4 - Deployment - Kubernetes Cluster - Set the image in the repo to latest") {
          steps {
             echo "Installing Kubernetes Cluster"
             sh "pwd"
