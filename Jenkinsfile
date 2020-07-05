@@ -1,14 +1,13 @@
 pipeline {
    agent any
    environment {
-        GOOGLE_PROJECT_ID = "playground-s-11-ee25be"
+        GOOGLE_PROJECT_ID = "playground-111111"
     } 
    stages {
       stage("Stage 1 - Version Verification Stage") {
          steps {
             echo "Checking Versions..."
             sh "docker --version"
-            sh "terraform version"
             sh "git version"
             sh "node -v"
             sh "npm -v"
