@@ -17,8 +17,7 @@
     },
     "jestSonar": {
         "reportPath":  "coverage",
-        "reportFile":  "test-reporter.xml",
-        "indent":  4
+        "reportFile":  "test-reporter.xml"
     },
   "keywords": [],
   "author": "",
